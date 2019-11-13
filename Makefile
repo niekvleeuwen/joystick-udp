@@ -4,7 +4,7 @@ CXXFLAGS = -std=c++0x -Wall -pedantic-errors -g
 
 SRCS =  main.cpp
 OBJS = ${SRCS:.cpp=.o}
-HEADERS = main.h
+HEADERS = main.h udp.h sensordata.h
 
 MAIN = joystick-udp
 
