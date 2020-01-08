@@ -1,21 +1,14 @@
 # this makefile can be used to easily compile the project.
-CXX = g++
-CXXFLAGS = -std=c++0x -Wall -pedantic-errors -g
 
-SRCS =  main.cpp
-OBJS = ${SRCS:.cpp=.o}
-HEADERS = main.h udp.h sensordata.h
+SRCS = main.cpp
+CFLAGS = -Wall -g
+LIBS = . 
+TARGET = joystick-udp
 
-MAIN = joystick-udp
-
-all: ${MAIN}
-		@echo Done 
-
-${MAIN}: ${OBJS}
-		${CXX} ${CXXFLAGS} ${OBJS} -o ${MAIN}
-
-.cpp.o:
-		${CXX} ${CXXFLAGS} -c $< -o $@
-
-clean:
-		${RM} ${PROGS} ${OBJS} *.o *~.
+all: $(SRCS)
+	@echo Installing the joystick-udp program.
+	g++ $(CFLAGS) $(SRCS) -I $(LIBS)-o $(TARGET)
+	@echo Done!
+clean: 
+	@echo Removing the executable..
+	rm $(TARGET)
