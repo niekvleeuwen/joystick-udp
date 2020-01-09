@@ -1,4 +1,5 @@
 #include "udp.h"
+#include "joystickdata.h"
 
 UDP::UDP(int _port, std::string _ipAddress){
 	port = _port;

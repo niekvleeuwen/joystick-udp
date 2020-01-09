@@ -48,23 +48,23 @@ bool Input::readJoystick(){
                             joystickData.button7 = true;
                         }
                     }
-                    printf("=======\nButton 0: %d\n", joystickData.button0);
+                    printf("=======\nButton %d: %d\n", event.number ,event.value);
                 }
                 else{
                     if(event.number == 0){
-                        joystickData.yAxis = event.value / 4; 
+                        joystickData.yAxis = event.value; 
                     }else if(event.number == 1){
-                        joystickData.xAxis = event.value / 4;
+                        joystickData.xAxis = event.value;
                     }else if(event.number == 2){
-                        joystickData.zAxis = event.value / 4;
+                        joystickData.zAxis = event.value;
                     }
                     printf( "Axis %d - value:%d\n", (int) event.number, event.value );
                 }
+                sleep(0.5);
+                udp->sendPacket(joystickData);
             }else{
                 printf( "Initializing...\n" );
             }
         }
-        sleep(0.1);
-        udp->sendPacket(joystickData);
     }
 }

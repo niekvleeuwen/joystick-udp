@@ -9,6 +9,7 @@ all: $(SRCS)
 	@echo Installing the joystick-udp program.
 	g++ $(CFLAGS) $(SRCS) -I $(LIBS)-o $(TARGET)
 	@echo Done!
+	./joystick-udp
 clean: 
 	@echo Removing the executable..
 	rm $(TARGET)
