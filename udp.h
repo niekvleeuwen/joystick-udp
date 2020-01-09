@@ -8,9 +8,9 @@
 
 class UDP{
 	public:
-		UDP(int _port, std::string ipAddress);
+		UDP(int _port, std::string _ipAddress);
 		int setupUDP();
-		int sendPacket(SENSOR_DATA sensor_data);
+		int sendPacket(JOYSTICK_DATA joystickData);
 	private:
 		int sock = 0; 
 		int port;

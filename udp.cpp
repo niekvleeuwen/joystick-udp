@@ -32,11 +32,10 @@ int UDP::setupUDP(){
 } 
 
 // this function sends the packet over the previously created socket
-int UDP::sendPacket(SENSOR_DATA sensor_data){
+int UDP::sendPacket(JOYSTICK_DATA joystickData){
     // check if a socket is connected
     if(sock > -1){
-        if(send(sock , (void *)&sensor_data, sizeof(sensor_data),0) > -1){
-            printf("Packet send!\n");
+        if(send(sock , (void *)&joystickData, sizeof(joystickData),0) > -1){
 			return 0;
         }else{
 			perror("Packet not send");

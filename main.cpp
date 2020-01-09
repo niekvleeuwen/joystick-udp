@@ -3,7 +3,7 @@
 
 int main(){
     int port = 7755;
-    std::string ipAddress = "192.168.100.10";
+    std::string ipAddress = "192.168.137.128";
     UDP *udp = new UDP(port, ipAddress);
     Input *input = new Input(udp);
 
