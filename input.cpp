@@ -57,14 +57,16 @@ bool Input::readJoystick(){
                         joystickData.xAxis = event.value;
                     }else if(event.number == 2){
                         joystickData.zAxis = event.value;
+                    }else if(event.number == 3){
+                        joystickData.gripperAxis = event.value;
                     }
                     printf( "Axis %d - value:%d\n", (int) event.number, event.value );
                 }
-                sleep(0.5);
                 udp->sendPacket(joystickData);
             }else{
                 printf( "Initializing...\n" );
             }
         }
+        sleep(0.5);
     }
 }

@@ -5,6 +5,7 @@ typedef struct {
         int32_t xAxis;
         int32_t yAxis;
         int32_t zAxis;
+        int32_t gripperAxis;
         bool button0;
         bool button1;
         bool button2;
