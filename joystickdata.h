@@ -6,6 +6,7 @@ typedef struct {
         int32_t yAxis;
         int32_t zAxis;
         int32_t gripperAxis;
+        int32_t tiltAxis;
         bool button0;
         bool button1;
         bool button2;
@@ -14,7 +15,6 @@ typedef struct {
         bool button5;
         bool button6;
         bool button7;
-        bool isNewEvent;
 } JOYSTICK_DATA;
 
 #endif // JOYSTICKDATA_H

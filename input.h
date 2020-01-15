@@ -24,7 +24,8 @@ class Input{
 
 	private:
         JOYSTICK_DATA joystickData;
-        int inputDevice;
+        int joystick1;
+        int joystick2;
         UDP *udp;
         struct joystickEvent {
             unsigned int time;      // event timestamp in milliseconds
@@ -33,6 +34,8 @@ class Input{
             unsigned char number;   // axis/button number
         };
         struct joystickEvent event;
+        bool readJoystick1();
+        bool readJoystick2();
 };
 
 #endif // INPUT_H
